@@ -1,9 +1,9 @@
+import codecademylib3_seaborn
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
 from sklearn import linear_model
 
-# Reading csv data from Codecademy content
 df = pd.read_csv("https://content.codecademy.com/programs/data-science-path/linear_regression/honeyproduction.csv")
 
 # Creating X with unique years and calculate mean honey production for each year
@@ -22,6 +22,11 @@ y_pred = my_regression_model.predict(X)
 # Plotting the regression line
 plt.plot(X, y_pred, color='red')
 plt.xlabel('Year')
-plt.ylabel('Average Honey Production')
+plt.ylabel('Average Honey Production') 
 plt.title('Linear Regression of Honey Production Over Years')
+
+# Adjusting for better label visibility
+plt.subplots_adjust(left=0.2)  # Adjusting margin
+plt.tight_layout()             # Preventing clipping
+
 plt.show()
